@@ -53,7 +53,7 @@ st.markdown("""
     
     hr { border-color: #1e293b; }
     
-    /* ETA Box Styling */
+    /* ETA Box & Legend Styling */
     .eta-box {
         background-color: #1e293b;
         padding: 10px;
@@ -61,6 +61,16 @@ st.markdown("""
         border-left: 3px solid #818cf8;
         font-size: 0.9rem;
         margin-top: 10px;
+    }
+    .legend-container {
+        background-color: #1e293b;
+        padding: 12px 18px;
+        border-radius: 8px;
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        margin-bottom: 20px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -242,6 +252,16 @@ with tab2:
     if not results:
         st.info("No data available.")
     else:
+        # ADDED: Clear Status Legend
+        st.markdown("""
+        <div class="legend-container">
+            <span style="font-weight: 700; color: #f8fafc; margin-right: 10px;">Status Legend:</span>
+            <span>🟢 <b>Normal / Validated</b> (Passed Checks)</span>
+            <span style="margin-left: 15px;">🟡 <b>Human Review Required</b> (Missing/Corrupt Docs)</span>
+            <span style="margin-left: 15px;">🔴 <b>Data Mismatch</b> (SI vs BL Conflict)</span>
+        </div>
+        """, unsafe_allow_html=True)
+
         fc1, fc2, fc3 = st.columns([2, 1, 1])
         search_query = fc1.text_input("🔍 Search File Ref")
         filter_category = fc2.selectbox("📂 Filter by Route", ["All", "BL_COMPARISON", "SI_REQUEST", "INVOICE_QUERY", "GENERAL", "SPAM"])
@@ -267,7 +287,6 @@ with tab2:
                 if mismatch and isinstance(record.get("discrepancies"), dict):
                     st.error("🚨 **Data Discrepancy Detected (SI vs BL)**")
                     
-                    # FIX: Cast all variables to string to prevent PyArrow Crash
                     diff_data = [{
                         "Data Field": str(field).replace("_", " ").title(), 
                         "Shipping Instructions (SI)": str(vals.get("SI", "N/A")), 

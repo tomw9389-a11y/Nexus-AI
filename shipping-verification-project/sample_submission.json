@@ -243,5 +243,651 @@
         "needs_human_review": false,
         "mismatch_found": false,
         "discrepancies": {}
+    },
+    "email_346": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_429": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_079": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_096": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": "No mismatch detected."
+    },
+    "email_215": {
+        "category": "SPAM",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_350": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_184": {
+        "category": "SPAM",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_491": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": true,
+        "discrepancies": {
+            "notify_party": {
+                "SI": "AL GURG STATIONERY LLC",
+                "BL": null
+            },
+            "port_of_loading": {
+                "SI": "BUATAN, INDONESIA (IDBUA)",
+                "BL": null
+            },
+            "port_of_discharge": {
+                "SI": "GDANSK, POLAND (PLGDN)",
+                "BL": null
+            },
+            "container_count": {
+                "SI": 1,
+                "BL": null
+            },
+            "gross_weight_kg": {
+                "SI": 20164.0,
+                "BL": null
+            }
+        }
+    },
+    "email_242": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_307": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": "No mismatch detected."
+    },
+    "email_370": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_235": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": true,
+        "discrepancies": {
+            "notify_party": {
+                "SI": null,
+                "BL": "CERIEX"
+            },
+            "port_of_loading": {
+                "SI": null,
+                "BL": "NANTONG, CHINA (CNNTG)"
+            },
+            "port_of_discharge": {
+                "SI": null,
+                "BL": "APAPA, NIGERIA (NGAPP)"
+            },
+            "container_count": {
+                "SI": null,
+                "BL": 4
+            },
+            "gross_weight_kg": {
+                "SI": null,
+                "BL": 94380.0
+            }
+        }
+    },
+    "email_409": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": "No mismatch detected."
+    },
+    "email_059": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_327": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_262": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_331": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_274": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_448": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_018": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_366": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_389": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_223": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_258": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_034": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": "No mismatch detected."
+    },
+    "email_464": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_171": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": "No mismatch detected."
+    },
+    "email_433": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_063": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_126": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_219": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_075": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_425": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_130": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_472": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_188": {
+        "category": "SPAM",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_022": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_167": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": "No mismatch detected."
+    },
+    "email_473": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_189": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_023": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_166": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_074": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_424": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_131": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_218": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_432": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_062": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_127": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_035": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_465": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_170": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_520": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": true,
+        "discrepancies": {
+            "shipper": {
+                "SI": "APRIL FINE PAPER TRADING",
+                "BL": "APRIL FINE PAPER TRADING ON BEHALF OF VITAL SOLUTIONS PTE LTD; 77 ROBINSON ROAD, #21-01; SINGAPORE 068896"
+            },
+            "consignee": {
+                "SI": null,
+                "BL": "CLIFFORD PAPER INC 70 EAST STREET; RIDGEFIELD, NJ 07657, USA"
+            }
+        }
+    },
+    "email_259": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_367": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": "No mismatch detected."
+    },
+    "email_388": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_222": {
+        "category": "SPAM",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_449": {
+        "category": "SPAM",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_019": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_330": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_275": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": "No mismatch detected."
+    },
+    "email_326": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_263": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_408": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_058": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_371": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_234": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_243": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": true,
+        "discrepancies": {
+            "port_of_loading": {
+                "SI": "PORT KLANG (WESTPORT), MALAYSIA",
+                "BL": "RUGAO/NANTONG/SHANGHAI, CHINA"
+            },
+            "port_of_discharge": {
+                "SI": "HOUSTON, US",
+                "BL": "MOMBASA, KENYA"
+            }
+        }
+    },
+    "email_306": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_185": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_490": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_214": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_351": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_428": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": "No mismatch detected."
+    },
+    "email_078": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_097": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": true,
+        "discrepancies": {
+            "shipper": {
+                "SI": "APRIL FINE PAPER TRADING (MIDDLE EAST) FZE | #813, 4 EA, DUBAI AIRPORT FREE ZONE; P.O. BOX: 293775, DUBAI, UNITED ARAB EMIRATES",
+                "BL": "APRIL FINE PAPER TRADING (MIDDLE EAST) FZE #813, 4 EA, DUBAI AIRPORT FREE ZONE P.O. BOX: 293775, DUBAI, UNITED ARAB EMIRATES"
+            },
+            "consignee": {
+                "SI": "ROXCEL TRADING GMBH | OPERNRING 3-5; 1010 VIENNA, AUSTRIA",
+                "BL": "ROXCEL TRADING GMBH OPERNRING 3-5 1010 VIENNA, AUSTRIA"
+            },
+            "notify_party": {
+                "SI": "NAGAPPA EXPORTS | NEW NO : 23, L-BLOCK, 17TH STREET; ANNA NAGAR EAST; CHENNAI, TAMIL NADU 600102; GST NO - 33AACFN6792L1ZU",
+                "BL": null
+            },
+            "port_of_loading": {
+                "SI": "SINGAPORE",
+                "BL": null
+            },
+            "port_of_discharge": {
+                "SI": "BRISBANE, AUSTRALIA",
+                "BL": null
+            },
+            "container_count": {
+                "SI": 10,
+                "BL": null
+            },
+            "gross_weight_kg": {
+                "SI": 216950.0,
+                "BL": null
+            }
+        }
+    },
+    "email_202": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_347": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_081": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_255": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_310": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_469": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_193": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_039": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_486": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": true,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_384": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_107": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": true,
+        "discrepancies": {
+            "shipper": {
+                "SI": "APRIL FINE PAPER TRADING (MIDDLE EAST) FZE | #813, 4 EA, DUBAI AIRPORT FREE ZONE; P.O. BOX: 293775, DUBAI, UNITED ARAB EMIRATES",
+                "BL": "APRIL FINE PAPER TRADING (MIDDLE EAST) FZE #813, 4 EA, DUBAI AIRPORT FREE ZONE P.O. BOX: 293775, DUBAI, UNITED ARAB EMIRATES"
+            },
+            "consignee": {
+                "SI": "KTP CO., LTD | KTP BLDG., 36 SANGWON-GIL; SEOUNGDONG-GU, SEOUL, SOUTH KOREA; TEL:02-2285-6025",
+                "BL": "VITAL SOLUTIONS PTE. LTD. KTP BLDG., 36 SANGWON-GIL SEOUNGDONG-GU, SEOUL, SOUTH KOREA TEL:02-2285-6025"
+            },
+            "notify_party": {
+                "SI": "KTP CO., LTD | KTP BLDG., 36 SANGWON-GIL; SEOUNGDONG-GU, SEOUL, SOUTH KOREA; TEL:02-2285-6025",
+                "BL": null
+            },
+            "port_of_loading": {
+                "SI": "PORT KLANG (WESTPORT), MALAYSIA",
+                "BL": null
+            },
+            "port_of_discharge": {
+                "SI": "MOMBASA, KENYA",
+                "BL": null
+            },
+            "container_count": {
+                "SI": 2,
+                "BL": null
+            },
+            "gross_weight_kg": {
+                "SI": 41124.0,
+                "BL": null
+            }
+        }
+    },
+    "email_412": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
     }
 }
