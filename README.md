@@ -1,6 +1,6 @@
 # Automated Shipping Document Verification Pipeline
 
-An AI-powered pipeline built with Google Gemini (`gemini-3.6-flash`) and Streamlit to automate inbox processing, email classification, shipping instruction (SI) & bill of lading (BL) document extraction, and discrepancy detection.
+An AI-powered pipeline built with Grok and Streamlit to automate inbox processing, email classification, shipping instruction (SI) & bill of lading (BL) document extraction, and discrepancy detection.
 
 ---
 
@@ -17,7 +17,7 @@ An AI-powered pipeline built with Google Gemini (`gemini-3.6-flash`) and Streaml
 
 ### 1. Prerequisites
 - Python 3.10+
-- A Google Gemini API Key ([Get one from Google AI Studio](https://ai.google.dev/gemini-api/docs/api-key))
+- A Grok API Key
 
 ### 2. Install Dependencies
 
