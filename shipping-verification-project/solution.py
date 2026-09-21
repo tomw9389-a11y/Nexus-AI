@@ -13,7 +13,8 @@ import pandas as pd
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 load_dotenv()
 
-groq_client = Groq() 
+# Fetch API key explicitly
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_MODEL = 'openai/gpt-oss-20b'
 
 class EmailClassification(BaseModel):
@@ -36,6 +37,9 @@ class DocumentVerificationSystem:
         self.inbox_dir = os.path.join(base_path, data_dir, "inbox")
         self.attachments_dir = os.path.join(base_path, data_dir, "attachments")
         self.output_file = os.path.join(base_path, "sample_submission.json")
+        
+        # Initialize Groq client dynamically using loaded environment variables
+        self.client = Groq(api_key=GROQ_API_KEY)
 
     def classify_email(self, email_data: Dict) -> EmailClassification:
         prompt = f"""Analyze the following email and classify it into one of these exact categories: 'BL_COMPARISON', 'SI_REQUEST', 'INVOICE_QUERY', 'GENERAL', 'SPAM'.
@@ -45,7 +49,7 @@ Body: {email_data.get('body', '')}"""
         
         for attempt in range(5):
             try:
-                response = groq_client.chat.completions.create(
+                response = self.client.chat.completions.create(
                     model=GROQ_MODEL,
                     messages=[{"role": "user", "content": prompt}],
                     response_format={"type": "json_object"},
@@ -88,7 +92,7 @@ Document Text:
 
         for attempt in range(5):
             try:
-                response = groq_client.chat.completions.create(
+                response = self.client.chat.completions.create(
                     model=GROQ_MODEL,
                     messages=[{"role": "user", "content": prompt}],
                     response_format={"type": "json_object"},
@@ -163,7 +167,6 @@ Document Text:
             return
 
         for index, email_file in enumerate(pending_files):
-            # Check if user clicked cancel
             if stop_callback and stop_callback():
                 logging.info("Scan aborted by user.")
                 break
