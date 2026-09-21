@@ -1,0 +1,12 @@
+groq
+pydantic
+python-dotenv
+streamlit
+pandas
+openpyxl
+docx2txt
+requests
+plotly
+fpdf
+watchdog
+pyarrow
