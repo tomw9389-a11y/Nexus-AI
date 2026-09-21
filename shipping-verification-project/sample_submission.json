@@ -889,5 +889,35 @@
         "needs_human_review": false,
         "mismatch_found": false,
         "discrepancies": {}
+    },
+    "email_042": {
+        "category": "SI_REQUEST",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_296": {
+        "category": "BL_COMPARISON",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": "No mismatch detected."
+    },
+    "email_279": {
+        "category": "GENERAL",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_150": {
+        "category": "SPAM",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
+    },
+    "email_500": {
+        "category": "INVOICE_QUERY",
+        "needs_human_review": false,
+        "mismatch_found": false,
+        "discrepancies": {}
     }
 }

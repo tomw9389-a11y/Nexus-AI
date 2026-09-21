@@ -143,7 +143,7 @@ Document Text:
                         record["discrepancies"] = "No mismatch detected."
         return record
 
-    def process_inbox(self, progress_callback=None, limit=None):
+    def process_inbox(self, progress_callback=None, stop_callback=None, limit=None):
         submission_result = {}
         if os.path.exists(self.output_file):
             try:
@@ -151,11 +151,8 @@ Document Text:
             except json.JSONDecodeError: pass
 
         all_email_files = [f for f in os.listdir(self.inbox_dir) if f.endswith(".json")]
-        
-        # Filter to only emails we haven't processed yet
         pending_files = [f for f in all_email_files if f.replace(".json", "") not in submission_result]
         
-        # Apply the user's limit (e.g., 5 emails)
         if limit is not None and limit != "All":
             pending_files = pending_files[:int(limit)]
             
@@ -166,8 +163,12 @@ Document Text:
             return
 
         for index, email_file in enumerate(pending_files):
-            email_id = email_file.replace(".json", "")
+            # Check if user clicked cancel
+            if stop_callback and stop_callback():
+                logging.info("Scan aborted by user.")
+                break
 
+            email_id = email_file.replace(".json", "")
             record = self.process_single_email(email_id)
             submission_result[email_id] = record
             
@@ -176,7 +177,6 @@ Document Text:
             if progress_callback: 
                 progress_callback(index + 1, total, email_id, record["category"])
             
-            # Pacing to avoid API bans
             time.sleep(3)
 
 if __name__ == "__main__":

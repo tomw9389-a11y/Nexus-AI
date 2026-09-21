@@ -53,7 +53,6 @@ st.markdown("""
     
     hr { border-color: #1e293b; }
     
-    /* ETA Box & Legend Styling */
     .eta-box {
         background-color: #1e293b;
         padding: 10px;
@@ -74,6 +73,10 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
+# Initialize Session State for Cancellation
+if "cancel_scan" not in st.session_state:
+    st.session_state.cancel_scan = False
 
 # ---------------------------------------------------------
 # Data Loading 
@@ -125,7 +128,7 @@ def generate_pdf(data):
     return pdf.output(dest="S").encode("latin-1")
 
 # ---------------------------------------------------------
-# Sidebar Controls with ETA Engine
+# Sidebar Controls with Cancel & Restart Logic
 # ---------------------------------------------------------
 with st.sidebar:
     st.image("https://cdn-icons-png.flaticon.com/512/2760/2760205.png", width=70) 
@@ -133,7 +136,16 @@ with st.sidebar:
     
     scan_limit = st.selectbox("Batch Size (New Emails)", ["1", "5", "10", "50", "All"], index=1)
     
-    if st.button("📥 Start AI Scanner", type="primary", width="stretch"):
+    col_btn1, col_btn2 = st.columns(2)
+    start_clicked = col_btn1.button("📥 Start", type="primary", width="stretch")
+    cancel_clicked = col_btn2.button("🛑 Abort", type="secondary", width="stretch")
+
+    if cancel_clicked:
+        st.session_state.cancel_scan = True
+        st.warning("⚠️ Abort signal sent. Stopping after current task...")
+
+    if start_clicked:
+        st.session_state.cancel_scan = False
         progress_bar = st.progress(0)
         status_text = st.empty()
         
@@ -161,17 +173,26 @@ with st.sidebar:
             </div>
             """, unsafe_allow_html=True)
             
+        def check_cancel():
+            return st.session_state.get("cancel_scan", False)
+
         try:
             from solution import DocumentVerificationSystem
             system = DocumentVerificationSystem(data_dir="data")
-            system.process_inbox(progress_callback=update_ui, limit=scan_limit)
-            st.toast('Scan Complete', icon='✅')
+            system.process_inbox(progress_callback=update_ui, stop_callback=check_cancel, limit=scan_limit)
+            
+            if st.session_state.cancel_scan:
+                st.toast('Scan Aborted by User', icon='🛑')
+            else:
+                st.toast('Scan Complete', icon='✅')
+                
             time.sleep(1)
             st.rerun()
         except Exception as e:
             st.error(f"Pipeline Error: {e}")
                 
     if st.button("🔄 Refresh Dashboard", width="stretch"):
+        st.session_state.cancel_scan = False
         st.rerun()
 
     st.markdown("---")
@@ -252,7 +273,6 @@ with tab2:
     if not results:
         st.info("No data available.")
     else:
-        # ADDED: Clear Status Legend
         st.markdown("""
         <div class="legend-container">
             <span style="font-weight: 700; color: #f8fafc; margin-right: 10px;">Status Legend:</span>
