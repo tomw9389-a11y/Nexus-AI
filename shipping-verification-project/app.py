@@ -128,7 +128,7 @@ def generate_pdf(data):
     return pdf.output(dest="S").encode("latin-1")
 
 # ---------------------------------------------------------
-# Sidebar Controls with Cancel & Restart Logic
+# Sidebar Controls with Cancel, Restart & Credits
 # ---------------------------------------------------------
 with st.sidebar:
     st.image("https://cdn-icons-png.flaticon.com/512/2760/2760205.png", width=70) 
@@ -209,6 +209,17 @@ with st.sidebar:
         )
     else:
         st.info("Run a scan to generate reports.")
+
+    # Team Credits Footer
+    st.markdown("---")
+    st.markdown("""
+    <div style="font-size: 0.8rem; color: #94a3b8; text-align: center; line-height: 1.4;">
+        <b>Created by:</b><br>
+        Foo Jian Feng<br>
+        Isaac Ma Kye Jay<br>
+        Tom Wong Ren Syuen
+    </div>
+    """, unsafe_allow_html=True)
 
 # ---------------------------------------------------------
 # Main App Header
