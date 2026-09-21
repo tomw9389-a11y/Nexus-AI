@@ -14,7 +14,16 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 load_dotenv()
 
 # Fetch API key explicitly
+# 1. Try loading from local environment (.env)
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+# 2. If not found, try loading from Streamlit Cloud secrets
+if not GROQ_API_KEY:
+    try:
+        import streamlit as st
+        GROQ_API_KEY = st.secrets.get("GROQ_API_KEY")
+    except Exception:
+        pass
 GROQ_MODEL = 'openai/gpt-oss-20b'
 
 class EmailClassification(BaseModel):
