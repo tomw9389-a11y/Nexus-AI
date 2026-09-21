@@ -121,10 +121,9 @@ with st.sidebar:
     st.image("https://cdn-icons-png.flaticon.com/512/2760/2760205.png", width=70) 
     st.markdown("<h3 style='color: #f8fafc; margin-top: -10px;'>Operations</h3>", unsafe_allow_html=True)
     
-    # NEW: Dropdown for Batch Size
     scan_limit = st.selectbox("Batch Size (New Emails)", ["1", "5", "10", "50", "All"], index=1)
     
-    if st.button("📥 Start AI Scanner", type="primary", use_container_width=True):
+    if st.button("📥 Start AI Scanner", type="primary", width="stretch"):
         progress_bar = st.progress(0)
         status_text = st.empty()
         
@@ -162,7 +161,7 @@ with st.sidebar:
         except Exception as e:
             st.error(f"Pipeline Error: {e}")
                 
-    if st.button("🔄 Refresh Dashboard", use_container_width=True):
+    if st.button("🔄 Refresh Dashboard", width="stretch"):
         st.rerun()
 
     st.markdown("---")
@@ -175,7 +174,7 @@ with st.sidebar:
             data=pdf_bytes,
             file_name="Averis_Executive_Report.pdf",
             mime="application/pdf",
-            use_container_width=True
+            width="stretch"
         )
     else:
         st.info("Run a scan to generate reports.")
@@ -217,7 +216,7 @@ with tab1:
                 cat_df.columns = ["Category", "Volume"]
                 fig = px.pie(cat_df, values='Volume', names='Category', hole=0.5, color_discrete_sequence=px.colors.qualitative.Pastel)
                 fig.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", font=dict(color="#f8fafc", family="Inter"))
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
         with c2:
             st.markdown("#### Discrepancy Frequency by Field")
@@ -232,7 +231,7 @@ with tab1:
                 field_df.columns = ["Field", "Frequency"]
                 fig2 = px.bar(field_df, x='Field', y='Frequency', text_auto=True, color='Field', color_discrete_sequence=px.colors.qualitative.Vivid)
                 fig2.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)", showlegend=False, font=dict(color="#f8fafc", family="Inter"))
-                st.plotly_chart(fig2, use_container_width=True)
+                st.plotly_chart(fig2, width="stretch")
             else:
                 st.success("All processed documents match perfectly.")
 
@@ -267,8 +266,15 @@ with tab2:
                     st.warning("⚠️ **Human Review Required:** Missing or unreadable SI/BL attachments.")
                 if mismatch and isinstance(record.get("discrepancies"), dict):
                     st.error("🚨 **Data Discrepancy Detected (SI vs BL)**")
-                    diff_data = [{"Data Field": field.replace("_", " ").title(), "Shipping Instructions (SI)": vals.get("SI", "N/A"), "Bill of Lading (BL)": vals.get("BL", "N/A")} for field, vals in record["discrepancies"].items()]
-                    st.dataframe(pd.DataFrame(diff_data), use_container_width=True, hide_index=True)
+                    
+                    # FIX: Cast all variables to string to prevent PyArrow Crash
+                    diff_data = [{
+                        "Data Field": str(field).replace("_", " ").title(), 
+                        "Shipping Instructions (SI)": str(vals.get("SI", "N/A")), 
+                        "Bill of Lading (BL)": str(vals.get("BL", "N/A"))
+                    } for field, vals in record["discrepancies"].items()]
+                    
+                    st.dataframe(pd.DataFrame(diff_data), width="stretch", hide_index=True)
                 elif category == "BL_COMPARISON" and not review: 
                     st.success("✅ Validated. No discrepancies.")
                 elif category != "BL_COMPARISON": 
@@ -283,7 +289,7 @@ with tab3:
     st.write("Submit finalized dataset to the Docker evaluation server.")
     st.markdown("<br>", unsafe_allow_html=True)
     
-    if st.button("📤 Submit to Evaluation Server", type="primary"):
+    if st.button("📤 Submit to Evaluation Server", type="primary", width="stretch"):
         with st.spinner("Connecting to localhost:8080..."):
             try:
                 response = requests.post("http://localhost:8080/submit", json=results)
@@ -311,7 +317,7 @@ with tab3:
 with tab4:
     st.write("Isolate and verify a single email through the LLM pipeline.")
     
-    if st.button("🎰 Randomize Email Sample"):
+    if st.button("🎰 Randomize Email Sample", width="stretch"):
         inbox_path = "data/inbox"
         if not os.path.exists(inbox_path):
             st.error(f"Directory missing: {inbox_path}")
